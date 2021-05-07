@@ -32,7 +32,31 @@ router.get('/:id', async (req, res) => {
 });
 
 router.post('/', (req, res) => {
+  /* 
+    {
+      tag_name: "yellow",
+      productIds: [1, 2, 5]
+    }
+  */
   // create a new tag
+  Tag.create(req.body)
+    .then((tag) => {
+      if (req.body.productIds.length) {
+        const taggedProductIdArr = req.body.productIds.map((product_id) => {
+          return {
+            product_id,
+            tag_id: tag.id,
+          };
+        });
+        return ProductTag.bulkCreate(taggedProductIdArr);
+      }
+      res.status(200).json(tag);
+    })
+    .then((taggedProductIds) => res.status(200).json(taggedProductIds))
+    .catch((err) => {
+      console.log(err);
+      res.status(400).json(err);
+    });
 });
 
 router.put('/:id', (req, res) => {
