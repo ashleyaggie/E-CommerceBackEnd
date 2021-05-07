@@ -41,7 +41,8 @@ Product.init(
         model: 'category',
         key: 'id',
         unique: false
-      }
+      },
+      onDelete: 'SET NULL'
     }
   },
   {
