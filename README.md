@@ -15,7 +15,11 @@
 
 ## Description
 
--Pending-
+We were tasked with developing the back-end portion of a database application. We were given starter code to work from. This code does not have a front-end built, so it requires Insomnia or some other program like it in order to be viewed.
+
+This particular application works with a database based around products, including a products table, categories table, and tags table. There is also a Product Tags table that is used for linking Products to Tags.
+
+One thing I ran into was that in the example exercise I was working from, they used "as" for the relationship on the many-to-many models. The problem was that when I ran it with JOIN's in MySql, it created both a "product_id" and "tag_id" and also a "productId" and "tagId." I found that removing the "as" and replacing it with a "foreignKey" fixed the issue.
 
 Unable to be deployed.
 
@@ -61,7 +65,9 @@ WHEN I test API POST, PUT, and DELETE routes in Insomnia Core
 
 THEN I am able to successfully create, update, and delete data in my database
 
-    * 
+    * Created routes for each Model for each type of fetch
+
+    * Also added ON DELETE SET NULL for deleting Categories.
 
 ## Installation
 
