@@ -19,11 +19,11 @@
 
 Unable to be deployed.
 
-[Link to video demonstration](Pending)
+[Link to video demonstration](https://drive.google.com/file/d/12RlYak7ZYNKp90iUNzag9xb3Ef0F9aN4/view)
 
 Example picture:
 
-![Picture of example database view](./databaseAllEmployees.png)
+![Example of Insomnia GET view](./Develop/images/insomniaExample.png)
 
 ## Criteria
 
@@ -33,25 +33,29 @@ WHEN I add my database name, MySQL username, and MySQL password to an environmen
 
 THEN I am able to connect to a database using Sequelize
 
-    * 
+    * Enabled using dotenv and providing an EXAMPLE .env file for users.
 
 WHEN I enter schema and seed commands
 
 THEN a development database is created and is seeded with test data
 
-    * 
+    * This was provided for us.
 
 WHEN I enter the command to invoke the application
 
 THEN my server is started and the Sequelize models are synced to the MySQL database
 
-    * 
+    * This was provided for us.
 
 WHEN I open API GET routes in Insomnia Core for categories, products, or tags
 
 THEN the data for each of these routes is displayed in a formatted JSON
 
-    * 
+    * Created GET routes for the models Category, Product, and Tag
+
+    * Within the GET route, it fetches the model data from the database
+
+    * An include is used to get info from all tables, as needed
 
 WHEN I test API POST, PUT, and DELETE routes in Insomnia Core
 
@@ -61,7 +65,7 @@ THEN I am able to successfully create, update, and delete data in my database
 
 ## Installation
 
-Files must be downloaded from Github. Then, run npm install to get the necessary node modules. Edit or duplicate the .env.EXAMPLE file to be just a .env file and fill in your MySql username and password. Open the seed.sql in MySql and run the file. Run node seeds to file information into the database. Last, run npm start.
+Files must be downloaded from Github. Then, run npm install to get the necessary node modules. Edit or duplicate the .env.EXAMPLE file to be just a .env file and fill in your MySql username and password. Open the schema.sql in MySql and run the file. Back in the code application, run node seeds to fill information into the database. Last, run npm start.
 
 ## Usage
 
